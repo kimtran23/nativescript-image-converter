@@ -1,0 +1,24 @@
+{
+  "name": "nativescript-image-converter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimtran23/nativescript-image-converter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimtran23/nativescript-image-converter/issues"
+  },
+  "homepage": "https://github.com/kimtran23/nativescript-image-converter#readme",
+  "devDependencies": {
+    "electron": "^3.0.10"
+  }
+}
