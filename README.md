@@ -1,1 +1,1 @@
-# nativescript-image-converter
+# NativeScript Image Converter
