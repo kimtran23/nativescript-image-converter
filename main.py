@@ -1,13 +1,30 @@
 import os
+import re
 import shutil
+
+
+rename = raw_input('Would you like to rename your files? [Y for Yes, any other input for No]: ')
+
+if rename.lower() == 'y':
+    path = raw_input('Enter path to image folder (ex: ~/Desktop/Image): ')
+    src = os.path.expanduser(path)
+
+    for root, dirs, files in os.walk(src):
+        for f in files:
+            if f.endswith('.png'):
+                # Rename files by replacing any non-alphanumeric characters, except . and @, into _
+                os.rename(os.path.join(root, f), os.path.join(root, re.sub('[^a-zA-Z0-9_.@]', '_', f.lower())))
 
 conversion = raw_input('Which folder would you like to create? [1 for Android, 2 for iOS]: ')
 
 if conversion != '1' and conversion != '2':
     print('Invalid input')
 else:
-    path = raw_input('Enter path to image folder (ex: ~/Desktop/Image): ')
-    src = os.path.expanduser(path)
+    # Prompt for folder name only if it wasn't entered previously during the renaming of files
+    if rename.lower() != 'y':
+        path = raw_input('Enter path to image folder (ex: ~/Desktop/Image): ')
+        src = os.path.expanduser(path)
+
     counter = 0
 
     if conversion == '1':
